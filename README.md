@@ -95,3 +95,7 @@ Music163/
 ## License
 
 仅供学习交流使用，请勿用于商业用途。
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Jimbera/Music163&type=Date)](https://www.star-history.com/#Jimbera/Music163&Date)
