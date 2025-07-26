@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试网易云音乐下载器</title>
+</head>
+<body>
+    <h1>网易云音乐下载器测试</h1>
+    <p>请在浏览器中打开 <a href="file:///c:/Users/Administrator/pythonProject/Music163/index.html">index.html</a> 文件来使用完整功能。</p>
+    
+    <h2>使用说明：</h2>
+    <ol>
+        <li>确保 Flask 服务器正在运行（已在终端中启动）</li>
+        <li>在浏览器中打开 index.html 文件</li>
+        <li>在输入框中粘贴网易云音乐链接：
+            <ul>
+                <li>歌单链接示例：https://music.163.com/m/playlist?id=2492467414&creatorId=621118881</li>
+                <li>单曲链接示例：https://music.163.com/song?id=123456</li>
+            </ul>
+        </li>
+        <li>选择音质</li>
+        <li>点击"开始处理"</li>
+        <li>等待下载完成后点击"保存"按钮</li>
+    </ol>
+    
+    <h2>功能特点：</h2>
+    <ul>
+        <li>✅ 支持歌单批量下载</li>
+        <li>✅ 支持单曲下载</li>
+        <li>✅ 支持混合输入（多行）</li>
+        <li>✅ 深色/浅色主题切换</li>
+        <li>✅ 下载历史记录</li>
+        <li>✅ 多种音质选择</li>
+    </ul>
+    
+    <h2>服务器状态：</h2>
+    <p id="status">检查中...</p>
+    
+    <script>
+        // 检查服务器状态
+        fetch('http://localhost:5000/api/parse-playlist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: 'test' })
+        })
+        .then(() => {
+            document.getElementById('status').textContent = '✅ Flask 服务器正在运行';
+            document.getElementById('status').style.color = 'green';
+        })
+        .catch(() => {
+            document.getElementById('status').textContent = '❌ Flask 服务器未运行，请先启动 app.py';
+            document.getElementById('status').style.color = 'red';
+        });
+    </script>
+</body>
+</html>
