@@ -96,6 +96,10 @@ Music163/
 
 仅供学习交流使用，请勿用于商业用途。
 
+# 📊 GitHub Stats
+
+![Alt](https://repobeats.axiom.co/api/embed/dac734b79288e09bc9a85b5f27be742548700127.svg "Repobeats analytics image")
+
 ## Star History
 
 <a href="https://www.star-history.com/#Jimbera/Music163&Date">
